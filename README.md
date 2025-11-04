@@ -4,7 +4,14 @@ A collection of **Linux** commands for displaying system information as percenta
 
 ## How It Works
 
-The main executable `sysperc` determines which module to run based on the name it is invoked with (`cpup`, `memp`, etc.). Each module is responsible for gathering specific system information and calculating the usage percentage.
+The main executable `sysperc` determines which module to run based on the name it is invoked with (`cpup`, `memp`, etc.). Symlinks are created that point to the executable, this is how the commands are made. Each module is responsible for gathering specific system information and calculating the usage percentage.
+
+```
+/usr/local/bin/batp -> ~/sysperc/sysperc
+/usr/local/bin/cpup -> ~/sysperc/sysperc
+/usr/local/bin/dskp -> ~/sysperc/sysperc
+/usr/local/bin/memp -> ~/sysperc/sysperc
+```
 
 ## Commands
 
@@ -21,7 +28,39 @@ The main executable `sysperc` determines which module to run based on the name i
 | ------ | --------------------------------------------- |
 | `-r`   | Round the usage percentage                    |
 | `-c`   | Output a raw number without a percentage sign |
-| `-h`   | Display help message                     |
+| `-h`   | Display help message                          |
+
+## Examples
+
+Get your current CPU usage as a rounded percentage (no `%` sign):
+
+```bash
+cpup -rc
+```
+
+Get memory usage as fractional number with the percent sign:
+
+```bash
+memp
+```
+
+Get disk usage for your home directory, rounded:
+
+```bash
+dskp -r /home
+```
+
+Get battery usage for battery `BAT1`:
+
+```bash
+batp BAT1
+```
+
+Get CPU usage help:
+
+```bash
+cpup -h
+```
 
 ## Dependencies
 
@@ -42,6 +81,6 @@ sudo make install
 | ----------- | -------------------------------------------------- |
 | `build`     | Compile the sysperc binary with all the modules    |
 | `clean`     | Remove compiled object files                       |
-| `format`    | Format all C/H files using clang-format            |
+| `format`    | Format all C and header files using clang-format   |
 | `install`   | Install symlinks to /usr/local/bin (requires sudo) |
 | `uninstall` | Remove symlinks and binary                         |
