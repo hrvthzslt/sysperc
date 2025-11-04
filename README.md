@@ -4,13 +4,13 @@ A collection of **Linux** commands for displaying system information as percenta
 
 ## How It Works
 
-The main executable `sysperc` determines which module to run based on the name it is invoked with (`cpup`, `memp`, etc.). Symlinks are created that point to the executable, this is how the commands are made. Each module is responsible for gathering specific system information and calculating the usage percentage.
+The main executable, `sysperc`, determines which module to execute based on the name it is called with (`cpup`, `memp`, `dksp`...). The command names are created as symlinks that all point to the same executable. Each module then gathers the relevant system information and calculates the corresponding usage percentage.
 
 ```
-/usr/local/bin/batp -> ~/sysperc/sysperc
-/usr/local/bin/cpup -> ~/sysperc/sysperc
-/usr/local/bin/dskp -> ~/sysperc/sysperc
-/usr/local/bin/memp -> ~/sysperc/sysperc
+/usr/local/bin/batp -> sysperc
+/usr/local/bin/cpup -> sysperc
+/usr/local/bin/dskp -> sysperc
+...
 ```
 
 ## Commands
