@@ -11,18 +11,14 @@ void help(char *command);
 
 int main(int argc, char *argv[])
 {
-	char *command = strdup(argv[0]);
 	Options options = get_options(argc, argv);
 
 	if (options.help) {
-		help(command);
-		free(command);
+		help(argv[0]);
 		return EXIT_SUCCESS;
 	}
 
-	int code = bus(command, options, argc, argv);
-	free(command);
-	return code;
+	return bus(argv[0], options, argc, argv);
 }
 
 int bus(char *command, Options options, int argc, char *argv[])

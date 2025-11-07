@@ -23,11 +23,11 @@ int cpup(Options options)
 
 	int has_prev = load_stat(label, &stat1);
 
-	if (get_cpu_stat(label, &stat2) != 0) {
+	if (!get_cpu_stat(label, &stat2)) {
 		return EXIT_FAILURE;
 	}
 
-	if (save_stat(label, &stat2)) {
+	if (!save_stat(label, &stat2)) {
 		return EXIT_FAILURE;
 	}
 
@@ -57,14 +57,14 @@ static int get_cpu_stat(char *label, CpuStat *stat)
 
 	if (!fp) {
 		fprintf(stderr, "File not found on system: %s\n", PROC_FILE);
-		return 1;
+		return 0;
 	}
 
 	fscanf(fp, "%s %lu %lu %lu %lu", label, &stat->user, &stat->nice,
 	       &stat->system, &stat->idle);
 	fclose(fp);
 
-	return 0;
+	return 1;
 }
 
 static unsigned long sum_stat(CpuStat stat)
@@ -77,14 +77,14 @@ static int save_stat(const char *label, CpuStat *stat)
 	FILE *fp = fopen(STAT_FILE, "w");
 	if (!fp) {
 		fprintf(stderr, "Cannot open for write: %s\n", STAT_FILE);
-		return EXIT_FAILURE;
+		return 0;
 	}
 
 	fprintf(fp, "%s %lu %lu %lu %lu\n", label, stat->user, stat->nice,
 	        stat->system, stat->idle);
 	fclose(fp);
 
-	return EXIT_SUCCESS;
+	return 1;
 }
 
 static int load_stat(char *label, CpuStat *stat)
