@@ -1,5 +1,7 @@
 # SysPerc
 
+![Status Bar](assets/status-bar.png)
+
 A collection of **Linux** commands for displaying system information as percentages, provided by a **Polymorphic Executable** written in C (inspired by BusyBox), for status bars and scripts.
 
 ## How It Works
