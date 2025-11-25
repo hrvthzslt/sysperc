@@ -79,10 +79,12 @@ sudo make install
 
 ## Make Targets
 
-| Target      | Description                                        |
-| ----------- | -------------------------------------------------- |
-| `build`     | Compile the sysperc binary with all the modules    |
-| `clean`     | Remove compiled object files                       |
-| `format`    | Format all C and header files using clang-format   |
-| `install`   | Install symlinks to /usr/local/bin (requires sudo) |
-| `uninstall` | Remove symlinks and binary                         |
+| Target            | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| `build`           | Compile the sysperc binary with all the modules               |
+| `clean`           | Remove compiled object files                                  |
+| `format`          | Format all C and header files using clang-format              |
+| `install`         | Install symlinks to `/usr/local/bin` (requires sudo)          |
+| `install-local`   | Install symlinks to `~/.local/bin`                            |
+| `uninstall`       | Remove symlinks (`/usr/local/bin`) and binary (requires sudo) |
+| `uninstall-local` | Remove symlinks (`~/.local/bin`) and binary                   |

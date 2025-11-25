@@ -14,8 +14,15 @@ CMDS = cpup memp batp dskp
 install: build
 	for cmd in $(CMDS); do ln -sf $(CURDIR)/sysperc /usr/local/bin/$$cmd; done
 
+install-local: build
+	for cmd in $(CMDS); do ln -sf $(CURDIR)/sysperc $(HOME)/.local/bin/$$cmd; done
+
 uninstall:
 	for cmd in $(CMDS); do rm -f /usr/local/bin/$$cmd; done
+	rm -f sysperc
+
+uninstall-local:
+	for cmd in $(CMDS); do rm -f $(HOME)/.local/bin/$$cmd; done
 	rm -f sysperc
 
 clean:
