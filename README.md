@@ -29,7 +29,7 @@ The main executable, `sysperc`, determines which module to execute based on the 
 | Option | Description                                   |
 | ------ | --------------------------------------------- |
 | `-r`   | Round the usage percentage                    |
-| `-c`   | Output a raw number without a percentage sign |
+| `-p`   | Output number with a percentage sign |
 | `-h`   | Display help message                          |
 
 ## Examples
@@ -37,7 +37,7 @@ The main executable, `sysperc`, determines which module to execute based on the 
 Get your current CPU usage as a rounded percentage (no `%` sign):
 
 ```bash
-cpup -rc
+cpup -rp
 ```
 
 Get memory usage as fractional number with the percent sign:

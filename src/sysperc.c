@@ -43,13 +43,13 @@ Options get_options(int argc, char *argv[])
 
 	Options options = {.round = 0, .help = 0};
 
-	while ((option = getopt(argc, argv, "rch")) != -1) {
+	while ((option = getopt(argc, argv, "rph")) != -1) {
 		switch (option) {
 			case 'r':
 				options.round = 1;
 				break;
-			case 'c':
-				options.clean = 1;
+			case 'p':
+				options.perc = 1;
 				break;
 			case 'h':
 				options.help = 1;
@@ -70,7 +70,7 @@ void help(char *command)
 		return;
 	}
 	printf("Usage: %s [-r] [-h]\n", command);
-	puts("  -r  Round the memory usage percentage");
-	puts("  -c  Clean number without percentage sign");
-	puts("  -h  Display this help message");
+	puts("  -r      Round the memory usage percentage");
+	puts("  -p      Print with percentage sign");
+	puts("  -h      Display this help message");
 }

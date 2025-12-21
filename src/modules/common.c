@@ -8,9 +8,9 @@ void print_output(float perc, Options options)
 
 	if (options.round) {
 		perc = roundf(perc);
-		fmt = options.clean == 0 ? "%.0f%%\n" : "%.0f\n";
+		fmt = options.perc == 1 ? "%.0f%%\n" : "%.0f\n";
 	} else {
-		fmt = options.clean == 0 ? "%.2f%%\n" : "%.2f\n";
+		fmt = options.perc == 1 ? "%.2f%%\n" : "%.2f\n";
 	}
 
 	printf(fmt, perc);

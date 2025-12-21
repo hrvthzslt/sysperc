@@ -1,6 +1,6 @@
 typedef struct {
 	int round;
-	int clean;
+	int perc;
 	int help;
 } Options;
 
