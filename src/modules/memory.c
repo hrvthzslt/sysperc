@@ -32,7 +32,7 @@ int memp(Options options)
 		return EXIT_FAILURE;
 	}
 
-	float perc;
+	double perc;
 	perc = 100.0 * (total - available) / total;
 
 	print_output(perc, options);

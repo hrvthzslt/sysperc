@@ -22,7 +22,7 @@ int dskp(int argc, char *argv[], Options options)
 	unsigned long free = stat.f_bfree * stat.f_frsize;
 	unsigned long used = total - free;
 
-	float perc = (float)used / (float)total * 100.0;
+	double perc = (double)used / (double)total * 100.0;
 
 	print_output(perc, options);
 
