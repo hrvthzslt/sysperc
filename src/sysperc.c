@@ -41,12 +41,12 @@ Options get_options(int argc, char *argv[])
 {
 	int option;
 
-	Options options = {.round = 0, .help = 0};
+	Options options = {.doub = 0, .perc = 0, .help = 0};
 
-	while ((option = getopt(argc, argv, "rph")) != -1) {
+	while ((option = getopt(argc, argv, "dph")) != -1) {
 		switch (option) {
-			case 'r':
-				options.round = 1;
+			case 'd':
+				options.doub = 1;
 				break;
 			case 'p':
 				options.perc = 1;
@@ -69,8 +69,8 @@ void help(char *command)
 		batp_help();
 		return;
 	}
-	printf("Usage: %s [-r] [-h]\n", command);
-	puts("  -r      Round the memory usage percentage");
+	printf("Usage: %s [-d] [-h]\n", command);
+	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
 	puts("  -h      Display this help message");
 }

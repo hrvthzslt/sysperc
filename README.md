@@ -19,25 +19,25 @@ The main executable, `sysperc`, determines which module to execute based on the 
 
 | Command          | Description                                                                | Argument                       |
 | ---------------- | -------------------------------------------------------------------------- | ------------------------------ |
-| `cpup -rch`      | Get overall CPU usage percentage, the current run uses previous run stats. |                                |
-| `memp -rch`      | Get memory usage as a percentage.                                          |                                |
-| `dskp -rch /`    | Get disk usage as a percentage.                                            | Disk path (default: `/`)       |
-| `batp -rch BAT0` | Get battery usage as a percentage.                                         | Battery name (default: `BAT0`) |
+| `cpup -dch`      | Get overall CPU usage percentage, the current run uses previous run stats. |                                |
+| `memp -dch`      | Get memory usage as a percentage.                                          |                                |
+| `dskp -dch /`    | Get disk usage as a percentage.                                            | Disk path (default: `/`)       |
+| `batp -dch BAT0` | Get battery usage as a percentage.                                         | Battery name (default: `BAT0`) |
 
 ## Common Command Options
 
 | Option | Description                                   |
 | ------ | --------------------------------------------- |
-| `-r`   | Round the usage percentage                    |
-| `-p`   | Output number with a percentage sign |
+| `-d`   | Show value as double                          |
+| `-p`   | Output number with a percentage sign          |
 | `-h`   | Display help message                          |
 
 ## Examples
 
-Get your current CPU usage as a rounded percentage (no `%` sign):
+Get your current CPU usage as a double percentage with `%` sign.
 
 ```bash
-cpup -rp
+cpup -dp
 ```
 
 Get memory usage as fractional number with the percent sign:
@@ -46,10 +46,10 @@ Get memory usage as fractional number with the percent sign:
 memp
 ```
 
-Get disk usage for your home directory, rounded:
+Get disk usage for your home directory, as a double:
 
 ```bash
-dskp -r /home
+dskp -d /home
 ```
 
 Get battery usage for battery `BAT1`:

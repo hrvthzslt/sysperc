@@ -1,5 +1,5 @@
 typedef struct {
-	int round;
+	int doub;
 	int perc;
 	int help;
 } Options;

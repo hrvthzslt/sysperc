@@ -31,9 +31,9 @@ int dskp(int argc, char *argv[], Options options)
 
 void dskp_help()
 {
-	printf("Usage: dskp [-r] [-p] [-h] [path]\n");
+	printf("Usage: dskp [-d] [-p] [-h] [path]\n");
 	puts("  path    Disk path (default: /)");
-	puts("  -r      Round the memory usage percentage");
+	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
 	puts("  -h      Display this help message");
 }

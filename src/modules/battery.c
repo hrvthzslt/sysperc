@@ -37,9 +37,9 @@ int batp(int argc, char *argv[], Options options)
 
 void batp_help()
 {
-	printf("Usage: batp [-r] [-p] [-h] [battery]\n");
+	printf("Usage: batp [-d] [-p] [-h] [battery]\n");
 	puts("  battery Battery name (default: BAT0)");
-	puts("  -r      Round the memory usage percentage");
+	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
 	puts("  -h      Display this help message");
 }
