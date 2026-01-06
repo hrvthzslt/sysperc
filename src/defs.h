@@ -1,10 +1,10 @@
 typedef struct {
-	int round;
-	int clean;
+	int doub;
+	int perc;
 	int help;
 } Options;
 
-void print_output(float perc, Options options);
+void print_output(double perc, Options options);
 
 int cpup(Options options);
 int memp(Options options);

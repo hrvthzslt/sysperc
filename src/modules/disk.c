@@ -22,7 +22,7 @@ int dskp(int argc, char *argv[], Options options)
 	unsigned long free = stat.f_bfree * stat.f_frsize;
 	unsigned long used = total - free;
 
-	float perc = (float)used / (float)total * 100.0;
+	double perc = (double)used / (double)total * 100.0;
 
 	print_output(perc, options);
 
@@ -31,9 +31,9 @@ int dskp(int argc, char *argv[], Options options)
 
 void dskp_help()
 {
-	printf("Usage: dskp [-r] [-c] [-h] [path]\n");
+	printf("Usage: dskp [-d] [-p] [-h] [path]\n");
 	puts("  path    Disk path (default: /)");
-	puts("  -r      Round the memory usage percentage");
-	puts("  -c      Clean number without percentage sign");
+	puts("  -d      Show value as double");
+	puts("  -p      Print with percentage sign");
 	puts("  -h      Display this help message");
 }
