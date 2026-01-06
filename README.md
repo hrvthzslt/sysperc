@@ -43,7 +43,7 @@ cpup -dp
 Get memory usage as fractional number with the percent sign:
 
 ```bash
-memp
+memp -dp
 ```
 
 Get disk usage for your home directory, as a double:
