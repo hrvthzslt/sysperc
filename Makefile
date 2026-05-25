@@ -1,11 +1,13 @@
+FLAGS = -Wall -Wextra
+
 .PHONY: build
 build:
-	gcc -Wall -Wextra -c src/sysperc.c -o build/sysperc.o
-	gcc -Wall -Wextra -c src/modules/common.c -o build/modules/common.o
-	gcc -Wall -Wextra -c src/modules/cpu.c -o build/modules/cpu.o
-	gcc -Wall -Wextra -c src/modules/memory.c -o build/modules/memory.o
-	gcc -Wall -Wextra -c src/modules/disk.c -o build/modules/disk.o
-	gcc -Wall -Wextra -c src/modules/battery.c -o build/modules/battery.o
+	gcc $(FLAGS) -c src/sysperc.c -o build/sysperc.o
+	gcc $(FLAGS) -c src/modules/common.c -o build/modules/common.o
+	gcc $(FLAGS) -c src/modules/cpu.c -o build/modules/cpu.o
+	gcc $(FLAGS) -c src/modules/memory.c -o build/modules/memory.o
+	gcc $(FLAGS) -c src/modules/disk.c -o build/modules/disk.o
+	gcc $(FLAGS) -c src/modules/battery.c -o build/modules/battery.o
 	gcc build/*.o build/modules/*.o -o sysperc -lm
 	chmod +x sysperc
 
