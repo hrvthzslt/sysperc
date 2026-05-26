@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra
+FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wshadow -Wformat=2 -D_FORTIFY_SOURCE=2
 
 .PHONY: build
 build:
