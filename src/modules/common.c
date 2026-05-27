@@ -4,14 +4,18 @@
 
 void print_output(double perc, Options options)
 {
-	const char *fmt;
-
 	if (options.doub) {
-		fmt = options.perc == 1 ? "%.2f%%\n" : "%.2f\n";
-	} else {
-		perc = round(perc);
-		fmt = options.perc == 1 ? "%.0f%%\n" : "%.0f\n";
+		if (options.perc == 1) {
+			printf("%.2f%%\n", (double)perc);
+			return;
+		} else {
+			printf("%.2f\n", perc);
+			return;
+		}
+	} else if (options.perc == 1) {
+		printf("%.0f%%\n", (double)perc);
+		return;
 	}
 
-	printf(fmt, perc);
+	printf("%.0f\n", perc);
 }

@@ -33,7 +33,7 @@ int memp(Options options)
 	}
 
 	double perc;
-	perc = 100.0 * (total - available) / total;
+	perc = 100.0 * ((double)total - (double)available) / (double)total;
 
 	print_output(perc, options);
 

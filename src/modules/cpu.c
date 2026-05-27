@@ -43,7 +43,8 @@ int cpup(Options options)
 
 	double cpu_usage = 0.0;
 	if (total_diff > 0) {
-		cpu_usage = 100.0 * (total_diff - idle_diff) / total_diff;
+		cpu_usage = 100.0 * ((double)total_diff - (double)idle_diff) /
+		            (double)total_diff;
 	}
 
 	print_output(cpu_usage, options);
