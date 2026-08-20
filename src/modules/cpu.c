@@ -23,7 +23,7 @@ int cpup(Options options)
 
 	int has_prev = load_stat(label, &stat1);
 
-    char icon[4] = "C: ";
+	char icon[4] = "C: ";
 
 	if (!get_cpu_stat(label, &stat2)) {
 		return EXIT_FAILURE;

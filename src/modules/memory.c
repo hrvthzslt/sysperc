@@ -7,7 +7,7 @@ int memp(Options options)
 {
 	const char *MEMINFO_FILE = "/proc/meminfo";
 
-    char icon[4] = "M: ";
+	char icon[4] = "M: ";
 
 	FILE *file = fopen(MEMINFO_FILE, "r");
 	if (!file) {
