@@ -35,5 +35,6 @@ void dskp_help()
 	puts("  path    Disk path (default: /)");
 	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
+	puts("  -i      Show icon before value");
 	puts("  -h      Display this help message");
 }

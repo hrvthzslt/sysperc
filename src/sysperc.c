@@ -75,5 +75,6 @@ void help(char *command)
 	printf("Usage: %s [-d] [-h]\n", command);
 	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
+	puts("  -i      Show icon before value");
 	puts("  -h      Display this help message");
 }
