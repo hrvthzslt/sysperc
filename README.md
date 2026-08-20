@@ -19,10 +19,10 @@ The main executable, `sysperc`, determines which module to execute based on the 
 
 | Command          | Description                                                                | Argument                       |
 | ---------------- | -------------------------------------------------------------------------- | ------------------------------ |
-| `cpup -dph`      | Get overall CPU usage percentage, the current run uses previous run stats. |                                |
-| `memp -dph`      | Get memory usage as a percentage.                                          |                                |
-| `dskp -dph /`    | Get disk usage as a percentage.                                            | Disk path (default: `/`)       |
-| `batp -dph BAT0` | Get battery usage as a percentage.                                         | Battery name (default: `BAT0`) |
+| `cpup -dpih`      | Get overall CPU usage percentage, the current run uses previous run stats. |                                |
+| `memp -dpih`      | Get memory usage as a percentage.                                          |                                |
+| `dskp -dpih /`    | Get disk usage as a percentage.                                            | Disk path (default: `/`)       |
+| `batp -dpih BAT0` | Get battery usage as a percentage.                                         | Battery name (default: `BAT0`) |
 
 ## Common Command Options
 
@@ -30,17 +30,12 @@ The main executable, `sysperc`, determines which module to execute based on the 
 | ------ | --------------------------------------------- |
 | `-d`   | Show value as double                          |
 | `-p`   | Output number with a percentage sign          |
+| `-i`   | Show an "icon" before the metric number       |
 | `-h`   | Display help message                          |
 
 ## Examples
 
-Get your current CPU usage as a double percentage with `%` sign.
-
-```bash
-cpup -dp
-```
-
-Get memory usage as fractional number with the percent sign:
+Get your current memory usage as a double percentage with `%` sign.
 
 ```bash
 memp -dp
