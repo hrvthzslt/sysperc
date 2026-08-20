@@ -5,7 +5,7 @@ typedef struct {
 	int icon;
 } Options;
 
-void print_output(double perc, Options options, char *icon);
+void print_output(double perc, Options options, const char *icon);
 
 int cpup(Options options);
 int memp(Options options);

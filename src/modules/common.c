@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "../defs.h"
 
-void print_output(double perc, Options options, char *icon)
+void print_output(double perc, Options options, const char *icon)
 {
 	const char *fmt;
 
