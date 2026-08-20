@@ -24,7 +24,7 @@ int dskp(int argc, char *argv[], Options options)
 
 	double perc = (double)used / (double)total * 100.0;
 
-	print_output(perc, options);
+	print_output(perc, options, "D: ");
 
 	return EXIT_SUCCESS;
 }

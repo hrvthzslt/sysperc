@@ -30,7 +30,7 @@ int batp(int argc, char *argv[], Options options)
 		return EXIT_FAILURE;
 	}
 
-	print_output(perc, options);
+	print_output(perc, options, "B: ");
 
 	return EXIT_SUCCESS;
 }

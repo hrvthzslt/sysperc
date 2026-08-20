@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include "../defs.h"
 
-void print_output(double perc, Options options)
+void print_output(double perc, Options options, char* icon)
 {
 	const char *fmt;
+    
+    printf("%s", icon);
 
 	if (options.doub) {
 		fmt = options.perc == 1 ? "%.2f%%\n" : "%.2f\n";

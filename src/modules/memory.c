@@ -7,6 +7,8 @@ int memp(Options options)
 {
 	const char *MEMINFO_FILE = "/proc/meminfo";
 
+    char icon[4] = "M: ";
+
 	FILE *file = fopen(MEMINFO_FILE, "r");
 	if (!file) {
 		fprintf(stderr, "File not found: %s\n", MEMINFO_FILE);
@@ -28,14 +30,14 @@ int memp(Options options)
 
 	if (total == 0) {
 		fprintf(stderr, "MemTotal not found from meminfo\n");
-		print_output(0.00, options);
+		print_output(0.00, options, icon);
 		return EXIT_FAILURE;
 	}
 
 	double perc;
 	perc = 100.0 * (total - available) / total;
 
-	print_output(perc, options);
+	print_output(perc, options, icon);
 
 	return EXIT_SUCCESS;
 }

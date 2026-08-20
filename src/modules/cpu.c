@@ -23,6 +23,8 @@ int cpup(Options options)
 
 	int has_prev = load_stat(label, &stat1);
 
+    char icon[4] = "C: ";
+
 	if (!get_cpu_stat(label, &stat2)) {
 		return EXIT_FAILURE;
 	}
@@ -32,7 +34,7 @@ int cpup(Options options)
 	}
 
 	if (!has_prev) {
-		print_output(0.00, options);
+		print_output(0.00, options, icon);
 		return EXIT_SUCCESS;
 	}
 
@@ -46,7 +48,7 @@ int cpup(Options options)
 		cpu_usage = 100.0 * (total_diff - idle_diff) / total_diff;
 	}
 
-	print_output(cpu_usage, options);
+	print_output(cpu_usage, options, icon);
 
 	return EXIT_SUCCESS;
 }
