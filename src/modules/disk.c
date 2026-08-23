@@ -24,7 +24,7 @@ int dskp(int argc, char *argv[], Options options)
 
 	double perc = (double)used / (double)total * 100.0;
 
-	print_output(perc, options);
+	print_output(perc, options, "D: ");
 
 	return EXIT_SUCCESS;
 }
@@ -35,5 +35,6 @@ void dskp_help()
 	puts("  path    Disk path (default: /)");
 	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
+	puts("  -i      Show icon before value");
 	puts("  -h      Display this help message");
 }

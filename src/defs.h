@@ -2,9 +2,10 @@ typedef struct {
 	int doub;
 	int perc;
 	int help;
+	int icon;
 } Options;
 
-void print_output(double perc, Options options);
+void print_output(double perc, Options options, const char *icon);
 
 int cpup(Options options);
 int memp(Options options);

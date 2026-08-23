@@ -41,9 +41,9 @@ Options get_options(int argc, char *argv[])
 {
 	int option;
 
-	Options options = {.doub = 0, .perc = 0, .help = 0};
+	Options options = {.doub = 0, .perc = 0, .help = 0, .icon = 0};
 
-	while ((option = getopt(argc, argv, "dph")) != -1) {
+	while ((option = getopt(argc, argv, "dphi")) != -1) {
 		switch (option) {
 			case 'd':
 				options.doub = 1;
@@ -53,6 +53,9 @@ Options get_options(int argc, char *argv[])
 				break;
 			case 'h':
 				options.help = 1;
+				break;
+			case 'i':
+				options.icon = 1;
 				break;
 		}
 	}
@@ -72,5 +75,6 @@ void help(char *command)
 	printf("Usage: %s [-d] [-h]\n", command);
 	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
+	puts("  -i      Show icon before value");
 	puts("  -h      Display this help message");
 }

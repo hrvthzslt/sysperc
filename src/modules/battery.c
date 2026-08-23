@@ -30,7 +30,7 @@ int batp(int argc, char *argv[], Options options)
 		return EXIT_FAILURE;
 	}
 
-	print_output(perc, options);
+	print_output(perc, options, "B: ");
 
 	return EXIT_SUCCESS;
 }
@@ -41,5 +41,6 @@ void batp_help()
 	puts("  battery Battery name (default: BAT0)");
 	puts("  -d      Show value as double");
 	puts("  -p      Print with percentage sign");
+	puts("  -i      Show icon before value");
 	puts("  -h      Display this help message");
 }
